@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Opciones de Tipado y Módulos */
+    "target": "ES2020",                                /* Especifica la versión de ECMAScript para el código de salida. Recomendado: es2020 o es2022. */
+    "module": "commonjs",                              /* Especifica el sistema de módulos para el código de salida de Node.js. */
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",                                /* Especifica la carpeta raíz donde se encuentran los archivos fuente. */
+    "outDir": "./dist",                                /* Especifica la carpeta donde se emitirá el código JavaScript compilado. */
+    "esModuleInterop": true,                           /* Habilita la interoperabilidad entre módulos CommonJS y ES Modules (import/export). Es crucial para Express. */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,          /* Asegura que las referencias a archivos coincidan con su capitalización en el disco. */
+
+    /* Opciones Estrictas y de Calidad */
+    "strict": true,                                    /* Habilita todas las opciones de verificación de tipos estrictos. ¡Muy recomendado! */
+    "skipLibCheck": true,                              /* Omite la verificación de tipos de los archivos de la librería (más rápido). */
+
+    /* Opciones de Salida y Directorios */
+    "moduleResolution": "node",                        /* Resuelve módulos utilizando la estrategia de Node.js. */
+    "sourceMap": true,                                 /* Genera archivos .map para facilitar la depuración del código fuente TypeScript original. */
+    "allowJs": true,                                   /* Permite compilar archivos .js junto con .ts (útil si mezclas código). */
+    "resolveJsonModule": true,                         /* Permite importar archivos .json como módulos. */
+    "typeRoots": ["./node_modules/@types", "./src/types"] /* Especifica carpetas para incluir tipos de paquetes. */
+  },
+  "include": ["src/**/*"],                             /* Archivos que TypeScript debe compilar (todos los archivos dentro de src). */
+  "exclude": ["node_modules", "dist"]                  /* Archivos o carpetas que el compilador debe ignorar. */
+}
