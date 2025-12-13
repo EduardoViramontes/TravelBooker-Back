@@ -39,7 +39,7 @@ export class Permissions extends Model<PermissionsAttributes, PermissionsCreatio
 }
 
 // Se Inicializa el modelo
-export function initUserModel(sequelize: Sequelize) {
+export function initModel(sequelize: Sequelize) {
   Permissions.init(
     {
       id: {

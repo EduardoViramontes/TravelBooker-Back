@@ -67,11 +67,11 @@ const modelsPath = path.join(__dirname, "models");
 
 fs.readdirSync(modelsPath).filter((file) => {
   return (
-    file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".ts" && !file.endsWith(".test.ts"));
+    file.indexOf(".") !== 0 && file !== basename && (file.slice(-3) === ".ts" || file.slice(-3) === ".js") && !file.endsWith(".test.ts"));
 }).forEach((file) => {
   if (file !== "relaciones.ts") {
      const modelImport = require(path.join(modelsPath, file));
-      const model = modelImport.initUserModel ? modelImport.initUserModel(sequelize) : null;
+      const model = modelImport.initModel ? modelImport.initModel(sequelize) : null;
       if (model) {
         db.models[model.name] = model;
       }
@@ -88,6 +88,4 @@ Object.keys(db.models).forEach((modelName) => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// Cargar archivo de relaciones
-//require("./relaciones")(sequelize.models);
 export default db;

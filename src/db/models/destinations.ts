@@ -33,7 +33,7 @@ export class Destinations extends Model<DestinationsAttributes, DestinationsCrea
 }
 
 // Se Inicializa el modelo
-export function initUserModel(sequelize: Sequelize) {
+export function initModel(sequelize: Sequelize) {
   Destinations.init(
     {
       id: {

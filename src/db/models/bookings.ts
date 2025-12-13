@@ -47,7 +47,7 @@ export class Bookings extends Model<BookingsAttributes, BookingsCreationAttribut
 }
 
 // Se Inicializa el modelo
-export function initUserModel(sequelize: Sequelize) {
+export function initModel(sequelize: Sequelize) {
   Bookings.init(
     {
       id: {

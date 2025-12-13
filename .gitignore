@@ -6,3 +6,4 @@ package-lock.json
 .gitlab-ci.yml
 build.bat
 temp/*.*
+dist/

@@ -42,8 +42,7 @@ const startServer = async () => {
     }
 
   } catch (dbError) {
-    console.error("No se pudo conectar a la base de datos");
-    console.error(dbError);
+    console.error("No se pudo conectar a la base de datos. Por favor verifique que este configurado correctamente las credenciales al servidor de base de datos e intente nuevamente.");
   }
 };
 

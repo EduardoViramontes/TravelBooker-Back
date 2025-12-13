@@ -39,7 +39,7 @@ export class Users extends Model<UserAttributes, UserCreationAttributes> impleme
 }
 
 // Se Inicializa el modelo
-export function initUserModel(sequelize: Sequelize) {
+export function initModel(sequelize: Sequelize) {
   Users.init(
     {
       id: {

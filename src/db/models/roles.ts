@@ -49,7 +49,7 @@ export class Roles extends Model<RolessAttributes, RolessCreationAttributes> imp
 }
 
 // Se Inicializa el modelo
-export function initUserModel(sequelize: Sequelize) {
+export function initModel(sequelize: Sequelize) {
   Roles.init(
     {
       id: {
