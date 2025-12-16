@@ -18,6 +18,7 @@ export class Valid {
       date: this.validDate.bind(this),
       dateonly: this.validDate.bind(this),
       model: this.validModel.bind(this),
+      integer: this.validInt.bind(this),
     };
   }
 
@@ -114,5 +115,20 @@ export class Valid {
     return { status:true }
   }
   
+  async validInt(field: any){
+    const value = this.data[field.key]
+    if(!Number.isInteger(value) || typeof value !== 'number'){
+      if(field.required) return { status:false , msg: 'Falta campo requerido.', field: field.key}
+      return { status:true }
+    } else if(typeof value != 'number'){
+      if(field.required) return { status:false , msg: `El parametro ${field.key} debe ser number pero se recibio ${typeof value}.`}
+      return { status:true }
+    } else if(value == 0){
+      if(field.required) return { status:false , msg: `El parámetro ${field.key} debe ser mayor a 0.`}
+      return { status:true }
+    }
+    this.registro[field.key] = value 
+    return { status:true }
+  }
 
 }

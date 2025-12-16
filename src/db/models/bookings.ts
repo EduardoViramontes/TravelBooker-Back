@@ -16,6 +16,7 @@ interface BookingsAttributes {
   idDestination: number;
   status: boolean;
   travelDate: Date;
+  numberOfTravelers: number;
   idCreatedByUser: number;
   createdAt?: Date;
   updatedAt?: Date;
@@ -33,6 +34,7 @@ export class Bookings extends Model<BookingsAttributes, BookingsCreationAttribut
   public idDestination!: number;
   public status!: boolean;
   public travelDate!: Date;
+  public numberOfTravelers!: number;
   public idCreatedByUser!: number;
   public createdAt!: Date;
   public updatedAt!: Date;
@@ -63,6 +65,11 @@ export function initModel(sequelize: Sequelize) {
       customerEmail: {
         type: DataTypes.STRING(150),
         allowNull: false,
+      },
+      numberOfTravelers: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
       },
       idDestination: {
         type: DataTypes.INTEGER,

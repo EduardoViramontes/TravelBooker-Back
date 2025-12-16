@@ -15,7 +15,7 @@ export function getModelFieldsInfo<T extends Model>(
   const result: FieldInfo[] = [];
   const update: any = {
     "Destinations": ["customerName","customerEmail","destinationId","status","travelDate", "isActive"],
-    "Bookings": ["customerName","customerEmail","idDestination","travelDate","status"],
+    "Bookings": ["customerName","customerEmail","idDestination","travelDate","status","numberOfTravelers"],
     "Permissions": [],
     "Roles": [ "descripcion"],
     "RolePermissions": [],
@@ -51,7 +51,7 @@ export function getModelFieldsInfo<T extends Model>(
     } else if (typeof t === "string") {
       typeName = model.name === "Users" && key == "email" ?  "email" : t ;
     }
-    const hasDefault = column.defaultValue !== undefined && column.defaultValue !== null;
+    const hasDefault = (model.name === "Bookings" && key == "numberOfTravelers") ? false : column.defaultValue !== undefined && column.defaultValue !== null;
 
     const allowNull = column.allowNull === true;
 

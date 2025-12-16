@@ -219,6 +219,7 @@ export class Bookings {
 				return res.status(400).send({ status: false, msg: "El campo travelDate debe ser mayor a la fecha actual."});
 			}
 
+
 			const nuevoRegistro  = await mainModel.create(respValid);
 			return res.status(200).send({ status: true, msg: "Elemento registrado correctamente", data: {id:nuevoRegistro.id}});
 		} catch (error) {
